@@ -58,7 +58,12 @@ li {
   font-size: 25px;
 }
 
+/* -webkit-line-clampで行数を制限 */
 .content {
   margin-top: 10px;
   padding-top: 10px;
+  display: -webkit-box; /* 記述必須 */
+  -webkit-box-orient: vertical; /* 記述必須 */
+  -webkit-line-clamp: 2; /* 行数を制限 */
+  overflow: hidden; /* はみ出た部分を非表示 */
 }
