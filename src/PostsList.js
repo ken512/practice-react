@@ -1,9 +1,9 @@
 import React from 'react'
 import './App.css'
 import { Link } from 'react-router-dom';
+import { posts } from './data/posts';
 
-
-const PostsList = ({ src }) => {
+const PostsList = () => {
 
   // formatDate 関数を定義し、日付文字列をフォーマットする処理を関数内で行う
   const formatDate = (dateString) => {
@@ -26,7 +26,7 @@ const PostsList = ({ src }) => {
       </header>
 
       {
-        src.map((elem, index) => (
+        posts.map((elem, index) => (
 
           <div key={elem.id} className="posts-info">
             <ul >
