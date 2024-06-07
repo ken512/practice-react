@@ -9,6 +9,6 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App src={posts} />
-    </BrowserRouter>
+      </BrowserRouter>
   </React.StrictMode>
 );
