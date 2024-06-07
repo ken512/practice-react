@@ -4,11 +4,11 @@ import { Routes, Route } from 'react-router-dom';
 import PostsList from './PostsList';
 import DetailsPage from './DetailsPage';
 
-const App = ({ src }) => {
+const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<PostsList src={src} />} />
-      <Route path="/post/:id" element={<DetailsPage src={src} />} />
+      <Route path="/" element={<PostsList />} />
+      <Route path="/post/:id" element={<DetailsPage  />} />
     </Routes>
   );
 };
