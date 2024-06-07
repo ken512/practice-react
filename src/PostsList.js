@@ -28,7 +28,7 @@ const PostsList = ({ src }) => {
       {
         src.map((elem, index) => (
 
-          <div key={elem} className="posts-info">
+          <div key={elem.id} className="posts-info">
             <ul >
               <li>
                 <Link to={`/post/${index}`}>
