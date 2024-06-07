@@ -1,10 +1,11 @@
 import { Link, useParams } from 'react-router-dom';
 import './App.css';
+import { posts } from './data/posts';
 
-const DetailsPage = ({ src }) => {
+const DetailsPage = () => {
 
   const { id } = useParams();
-  const post = src[id];
+  const post = posts[id];
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
