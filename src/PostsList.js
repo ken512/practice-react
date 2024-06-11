@@ -3,6 +3,7 @@ import './App.css'
 import { Link } from 'react-router-dom';
 import { posts } from './data/posts';
 
+
 const PostsList = () => {
 
   // formatDate 関数を定義し、日付文字列をフォーマットする処理を関数内で行う
@@ -26,12 +27,12 @@ const PostsList = () => {
       </header>
 
       {
-        posts.map((elem, index) => (
+        posts.map((elem) => (
 
           <div key={elem.id} className="posts-info">
             <ul >
               <li>
-                <Link to={`/post/${index}`}>
+                <Link to={`/post/${elem.id}`}>
                   <div className="date">{formatDate(elem.createdAt)}</div>
                   <div className="programming-language">{elem.categories.map((category, idx) => (
                     <span key={idx} className="category-box">{category}</span>
@@ -51,4 +52,3 @@ const PostsList = () => {
 }
 
 export default PostsList ;
-
