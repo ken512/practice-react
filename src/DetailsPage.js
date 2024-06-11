@@ -13,6 +13,8 @@ const DetailsPage = () => {
     return date.toLocaleDateString('ja-JP', options);
   }
 
+  if (!post) return <div>投稿が見つかりません</div>;
+
   return (
     <div className='App'>
       <header className="header-App">

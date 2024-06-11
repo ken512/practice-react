@@ -1,3 +1,8 @@
+body {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
 a {
   text-decoration: none;
 }
@@ -67,3 +72,4 @@ li {
   -webkit-line-clamp: 2; /* 行数を制限 */
   overflow: hidden; /* はみ出た部分を非表示 */
 }
+
