@@ -5,7 +5,7 @@ import { posts } from './data/posts';
 const DetailsPage = () => {
 
   const { id } = useParams();
-  const post = posts[id];
+  const post = posts.find(post => post.id === parseInt(id));
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
