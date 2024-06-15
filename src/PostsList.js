@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom';
-import { posts } from './data/posts';
-
 
 const PostsList = () => {
+  
 
   // formatDate 関数を定義し、日付文字列をフォーマットする処理を関数内で行う
   const formatDate = (dateString) => {
@@ -19,6 +18,29 @@ const PostsList = () => {
     return date.toLocaleDateString('ja-JP', options);
   };
 
+  const [posts, setPosts] = useState({ articles: [] });
+  const [loading, setLoading] = useState(true); // ローディング状態を追加
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts");
+        const data = await response.json();
+        
+        setPosts( data );
+
+      }  finally {
+        setLoading(false); // データ取得が完了したらローディングを終了
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>; // ローディング中の表示
+  }
+
   return (
     <div className="App">
       <header className="header-App">
@@ -27,18 +49,17 @@ const PostsList = () => {
       </header>
 
       {
-        posts.map((elem) => (
-
-          <div key={elem.id} className="posts-info">
+        Array.isArray(posts.posts) && posts.posts.map(article => (
+          <div key={article.id} className="posts-info">
             <ul >
               <li>
-                <Link to={`/post/${elem.id}`}>
-                  <div className="date">{formatDate(elem.createdAt)}</div>
-                  <div className="programming-language">{elem.categories.map((category, idx) => (
+                <Link to={`/post/${article.id}`}>
+                  <div className="date">{formatDate(article.createdAt)}</div>
+                  <div className="programming-language">{article.categories.map((category, idx) => (
                     <span key={idx} className="category-box">{category}</span>
                   ))}</div>
-                  <div className="title">{elem.title}</div>
-                  <div className="content" dangerouslySetInnerHTML={{ __html: elem.content }}>
+                  <div className="title">{article.title}</div>
+                  <div className="content" dangerouslySetInnerHTML={{ __html: article.content }}>
                   </div>
                 </Link>
               </li>
@@ -51,4 +72,4 @@ const PostsList = () => {
 
 }
 
-export default PostsList ;
+export default PostsList;
