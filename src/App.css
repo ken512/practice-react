@@ -1,3 +1,4 @@
+
 body {
   margin: 0 auto;
   padding: 0 auto;
@@ -138,3 +139,52 @@ input[type="submit"] {
 input[type="reset"] {
   background-color: rgb(229 231 235);
 }
+
+/* スマートフォン用対応 */
+@media screen and (max-width:480px)  {
+
+  .posts-info {
+    height: 16rem;
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+  }
+
+  .programming-language {
+    margin: 0 20px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin: 20px;
+  }
+
+  .content {
+    margin: 30px 0;
+    font-size: 15px;
+  }
+
+  .img {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .img img {
+    width: 430px;
+  }
+
+  .inquiry {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    margin: 0 auto;
+    padding: 10px;
+
+  }
+
+.formItem dl dt  {
+  float: none;
+}
+
+}
+
