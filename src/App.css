@@ -42,9 +42,6 @@ h1 {
   border: solid 0.6px #666666;
 }
 
-.posts-info ul {
-  padding-left: 15px;
-}
 
 .posts-info a {
   color: #000;
@@ -146,8 +143,17 @@ input[type="reset"] {
   .posts-info {
     height: 16rem;
     display: flex;
-    margin: 5px;
+    margin: 10px;
+    padding: 20px;
     justify-content: center;
+  }
+
+  .posts-info ul {
+    padding: 0;
+  }
+
+  .date {
+    padding: 10px 0 0 0;
   }
 
   .programming-language {
@@ -170,7 +176,7 @@ input[type="reset"] {
   }
 
   .img img {
-    width: 430px;
+    width: 400px;
   }
 
   .inquiry {
