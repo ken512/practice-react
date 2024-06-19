@@ -45,7 +45,7 @@ const PostsList = () => {
     <div className="App">
       <header className="header-App">
         <Link className="link" to="/">Blog</Link>
-        <Link className="link" to="/Inquiry">お問い合わせ</Link>
+        <Link className="link" to="/inquiry">お問い合わせ</Link>
       </header>
 
       {
