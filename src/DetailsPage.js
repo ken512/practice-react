@@ -44,9 +44,9 @@ const DetailsPage = () => {
       </header>
 
         <div style={{ border: 'none' }} className="posts-info">
-          <ul>
-            <li key={detailsData.id}>
-              <div><img src={detailsData.thumbnailUrl} alt="img" /></div>
+          <ul className="post-list">
+            <li key={detailsData.id} className="post-item">
+              <div className="img">< img src={detailsData.thumbnailUrl} alt="img" /></div>
               <div className="date">{formatDate(detailsData.createdAt)}</div>
               <div className="programming-language">
                 {detailsData.categories.map((category, idx) => (
