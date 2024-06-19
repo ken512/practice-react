@@ -40,7 +40,7 @@ const DetailsPage = () => {
     <div className='App'>
       <header className="header-App">
         <Link to="/" className="link">Blog</Link>
-        <Link to="/Inquiry" className="link" >お問い合わせ</Link>
+        <Link to="/inquiry" className="link" >お問い合わせ</Link>
       </header>
 
         <div style={{ border: 'none' }} className="posts-info">
