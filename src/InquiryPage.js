@@ -45,7 +45,10 @@ const InquiryPage = () => {
       setIsSubmitting(false);
     }
   };
-
+  
+  const handleClear = () => {
+    setInquiryData({name: '', email: '', message: ''});
+  }
   return (
     <div className='App'>
       <header className="header-App">
@@ -119,7 +122,7 @@ const InquiryPage = () => {
           </div>
           <div className="btn">
           <input type="submit" value="送信" disabled={isSubmitting} />
-          <input type="reset" value="クリア" onClick={() => setInquiryData({ name: '', email: '', message: '' })} disabled={isSubmitting} />
+          <input type="reset" value="クリア" onClick={handleClear} disabled={isSubmitting} />
           </div>
         </form>
       </div>
