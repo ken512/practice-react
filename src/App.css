@@ -1,3 +1,4 @@
+
 body {
   margin: 0 auto;
   padding: 0 auto;
@@ -10,6 +11,17 @@ a {
 li {
   list-style: none;
 }
+
+span {
+  color: rgba(197, 16, 16, 0.71);
+  margin-left: 40px;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
 
 .header-App {
   background-color: #333;
@@ -71,5 +83,108 @@ li {
   -webkit-box-orient: vertical; /* 記述必須 */
   -webkit-line-clamp: 2; /* 行数を制限 */
   overflow: hidden; /* はみ出た部分を非表示 */
+}
+
+.inquiry {
+  max-width: 800px;
+  margin: 40px 320px ;
+}
+
+.text {
+  display: flex;
+  flex-flow: column;
+}
+
+
+.formItem dl dt {
+  width: 120px;
+  float:left;
+}
+
+input[type="text"] {
+  height: 60px;
+  padding-left: 20px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.btn {
+  text-align: center;
+  margin-top: 40px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  border: 0px  #ccc;
+  border-radius: 10px;
+  margin: 0 8px;
+  padding: 8px 15px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+input[type="submit"] {
+  background-color: rgb(31 41 55);
+  color: rgb(255 255 255 );
+}
+
+input[type="reset"] {
+  background-color: rgb(229 231 235);
+}
+
+/* スマートフォン用対応 */
+@media screen and (max-width:480px)  {
+
+  .posts-info {
+    height: 16rem;
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+  }
+
+  .programming-language {
+    margin: 0 20px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin: 20px;
+  }
+
+  .content {
+    margin: 30px 0;
+    font-size: 15px;
+  }
+
+  .img {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .img img {
+    width: 430px;
+  }
+
+  .inquiry {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    margin: 0 auto;
+    padding: 10px;
+
+  }
+
+.formItem dl dt  {
+  float: none;
+}
+
 }
 

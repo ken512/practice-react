@@ -19,7 +19,7 @@ const DetailsPage = () => {
       try {
         const response = await fetch(`https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}`);
         const result = await response.json();
-        console.log(result.post);
+
         setDetailsData(result.post); 
       } finally {
         setLoading(false); // データ取得が完了したらローディングを終了
@@ -40,13 +40,13 @@ const DetailsPage = () => {
     <div className='App'>
       <header className="header-App">
         <Link to="/" className="link">Blog</Link>
-        <Link to="/" className="link" >お問い合わせ</Link>
+        <Link to="/inquiry" className="link" >お問い合わせ</Link>
       </header>
 
         <div style={{ border: 'none' }} className="posts-info">
-          <ul>
-            <li key={detailsData.id}>
-              <div><img src={detailsData.thumbnailUrl} alt="img" /></div>
+          <ul className="post-list">
+            <li key={detailsData.id} className="post-item">
+              <div className="img">< img src={detailsData.thumbnailUrl} alt="img" /></div>
               <div className="date">{formatDate(detailsData.createdAt)}</div>
               <div className="programming-language">
                 {detailsData.categories.map((category, idx) => (

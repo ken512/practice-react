@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './App.css'
+import './App.css';
 import { Link } from 'react-router-dom';
 
 const PostsList = () => {
@@ -45,14 +45,14 @@ const PostsList = () => {
     <div className="App">
       <header className="header-App">
         <Link className="link" to="/">Blog</Link>
-        <Link className="link" to="/">お問い合わせ</Link>
+        <Link className="link" to="/inquiry">お問い合わせ</Link>
       </header>
 
       {
         Array.isArray(posts.posts) && posts.posts.map(article => (
           <div key={article.id} className="posts-info">
-            <ul >
-              <li>
+            <ul className="post-list">
+              <li className="post-item">
                 <Link to={`/post/${article.id}`}>
                   <div className="date">{formatDate(article.createdAt)}</div>
                   <div className="programming-language">{article.categories.map((category, idx) => (
