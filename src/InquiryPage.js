@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import './App.css';
-
 const InquiryPage = () => {
   const [inquiryData, setInquiryData] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({});
